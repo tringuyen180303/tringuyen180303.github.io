@@ -18,6 +18,7 @@
             padding: 0;
             background-color: #0B0B05;
             color: #FFFFFF;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
         .container {
             width: 90%;
@@ -28,6 +29,10 @@
         nav {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
@@ -44,6 +49,10 @@
             text-decoration: none;
             font-size: 18px;
             font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #FF004F;
         }
         header {
             height: 100vh;
@@ -54,11 +63,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding-top: 60px; /* To prevent content being hidden behind nav */
         }
         .header-text {
             background-color: rgba(255, 255, 255, 0.6);
             padding: 20px;
             border-radius: 10px;
+            transition: background-color 0.5s ease;
         }
         .header-text p {
             color: navy;
@@ -82,6 +93,16 @@
             margin-bottom: 40px;
             font-size: 28px;
             color: #FFFFFF;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #FF004F;
+            margin: 10px auto 0;
+            display: block;
+            border-radius: 2px;
         }
         /* About Section */
         #about .row {
@@ -96,6 +117,10 @@
         #about img {
             width: 100%;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        #about img:hover {
+            transform: scale(1.05);
         }
         /* Skills Section */
         #skills .skills-grid {
@@ -110,6 +135,11 @@
             padding: 10px 20px;
             border-radius: 20px;
             font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #skills .skills-grid span:hover {
+            background-color: #FF004F;
+            transform: scale(1.1);
         }
         /* Experience, Education, Involvement Sections */
         .timeline {
@@ -117,6 +147,13 @@
         }
         .timeline-item {
             margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .timeline-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .timeline-item h3 {
             margin-bottom: 5px;
@@ -136,6 +173,12 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .work:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         .work img {
             width: 100%;
@@ -172,17 +215,40 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .layer a:hover {
+            background-color: #FFFFFF;
+            color: #FF004F;
         }
         /* Contact Section */
         #contact .contact-info p {
             font-size: 18px;
             margin: 10px 0;
+            transition: color 0.3s ease;
+        }
+        #contact .contact-info p i {
+            color: #FF004F;
+            margin-right: 10px;
+        }
+        #contact .contact-info p a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        #contact .contact-info p a:hover {
+            color: #FF004F;
         }
         #contact .social-icons a {
             color: #FFFFFF;
             margin: 0 10px;
             font-size: 24px;
             text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        #contact .social-icons a:hover {
+            color: #FF004F;
+            transform: translateY(-5px);
         }
         #contact .btn {
             display: inline-block;
@@ -193,9 +259,11 @@
             border-radius: 5px;
             margin-top: 20px;
             font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         #contact .btn:hover {
             background-color: #0FD779;
+            transform: translateY(-3px);
         }
         /* Footer */
         .copyright {
@@ -216,6 +284,9 @@
             nav ul li {
                 margin: 10px 0;
             }
+            header {
+                padding-top: 80px; /* Adjust for fixed nav */
+            }
         }
     </style>
 </head>
@@ -225,6 +296,7 @@
     <nav>
         <div class="container">
             <ul>
+                <li><a href="#header">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -254,7 +326,7 @@
                     <img src="https://via.placeholder.com/350" alt="About Image">
                 </div>
                 <div class="about-col-2">
-                    <p>I am currently a freshman at Luddy School of Informatics, Computing and Engineering. At Luddy School of Informatics, Computing and Engineering, I have learned various experiences among talented students and thoughtful mentors:</p>
+                    <p>I am currently a junior at Luddy School of Informatics, Computing and Engineering. At Luddy School of Informatics, Computing and Engineering, I have learned various experiences among talented students and thoughtful mentors:</p>
                     <ul>
                         <li>Concentrations on Machine Learning and Natural Language Processing in various fields such as Healthcare, Business, and Computer Vision.</li>
                         <li>Passion about Makerspace lab with modern technologies for prototyping, manufacturing, and laser-cutting.</li>
@@ -278,7 +350,9 @@
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>Java</span>
+                <span>C/C++</span>
                 <span>R Programming</span>
+                <span>SQL</span>
             </div>
         </div>
     </section>
@@ -288,6 +362,18 @@
         <div class="container">
             <h2>Experience</h2>
             <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Software Engineer Intern at REN-ISAC</h3>
+                    <span>September 2024 - Present</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>Software Engineer Intern at NSF NCAR</h3>
+                    <span>May 2024 - August 2024</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>SWE Intern at SmartOSC</h3>
+                    <span>May 2023 - August 2023</span>
+                </div>
                 <div class="timeline-item">
                     <h3>Machine Learning Research Assistant</h3>
                     <span>February 2023 - Present</span>
@@ -300,6 +386,8 @@
                     <h3>Undergraduate Researcher at Luddy with PhD student</h3>
                     <span>August 2022 - December 2022</span>
                 </div>
+                <!-- New Internships -->
+                
             </div>
         </div>
     </section>
@@ -319,6 +407,10 @@
             <h2>Involvement</h2>
             <div class="timeline">
                 <div class="timeline-item">
+                    <h3>Co-President, Machine Learning for All Club</h3>
+                    <span>September 2023 - Present</span>
+                </div>
+                <div class="timeline-item">
                     <h3>Secretary of Teter Residence Hall</h3>
                     <span>January 2023 - Present</span>
                 </div>
@@ -326,6 +418,8 @@
                     <h3>Member of Computer Science Club</h3>
                     <span>August 2022 - Present</span>
                 </div>
+                <!-- New Involvement -->
+                
             </div>
         </div>
     </section>
@@ -378,7 +472,7 @@
             <div class="row">
                 <div class="contact-left">
                     <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ntri1805@gmail.com">ntri1805@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+18127784801">812-778-4801</a></p>
+                    <p><i class="fas fa-phone"></i> Phone: <a href="tel:+18126715252">812-671-5252</a></p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
