@@ -106,7 +106,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        #about .about-col-1, #about .about-col-2 {
+        #about .about-col-1, #about .about-col-2 , #about .education-text  {
             flex: 1 1 45%;
             margin: 10px;
         }
@@ -119,10 +119,16 @@
             transform: scale(1.05);
         }
         #about .education-text {
-    text-align: center;       /* Center the text horizontally */
-    font-size: 24px;          /* Increase font size for prominence */
-    line-height: 1.6;         /* Improve readability */
-    color: #FFFFFF;           /* Ensure text color contrasts with background */
+    display: flex; /* Enables flexbox for the text container */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text within the container */
+    font-size: 24px; /* Increased font size for prominence */
+    line-height: 1.6; /* Improves readability */
+    color: #FFFFFF; /* Ensures text color contrasts with background */
+    padding: 20px; /* Adds space around the text */
+            
 }
         /* Skills Section */
         #skills .skills-grid {
