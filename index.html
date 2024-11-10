@@ -29,29 +29,57 @@
         nav {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px 0;
-            /* Removed position: fixed; to allow nav to scroll with the page */
             width: 100%;
             z-index: 1000;
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
         }
+
+        /* Navigation List */
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
+            align-items: center; /* Vertically center the items */
             margin: 0;
             padding: 0;
+            flex-wrap: nowrap; /* Prevents items from wrapping to the next line */
         }
+
+        /* Navigation List Items */
         nav ul li {
             margin: 0 15px;
+            flex: 0 0 auto; /* Prevents flex items from stretching */
         }
+
+        /* Navigation Links */
         nav ul li a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 18px;
             font-weight: 700;
             transition: color 0.3s ease;
+            padding: 10px 15px; /* Increases clickable area */
+            white-space: nowrap; /* Prevents text from wrapping */
         }
+
+        /* Hover Effect for Links */
         nav ul li a:hover {
             color: #FF004F;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Optional: Hide Scrollbar but Allow Scrolling */
+        nav::-webkit-scrollbar {
+            display: none; /* Hides scrollbar for WebKit browsers */
+        }
+
+        nav {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
         section {
             padding: 60px 0;
