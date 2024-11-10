@@ -166,6 +166,9 @@
             padding: 20px;
             text-align: center; /* Ensures text is centered */
         }
+        .work:hover .layer {
+            transform: translateY(0); /* Slide up the overlay on hover */
+        }
         .layer h3 {
             margin-bottom: 10px;
             font-size: 18px;
@@ -253,14 +256,15 @@
             }
             /* Education Section Flex Layout */
             #education .education-content {
-                display: flex;
-                flex-wrap: wrap;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                gap: 20px;
             }
             #education .education-text, #education .education-image {
-                flex: 1 1 45%;
+                flex: 1 1 100%;
+            }
+            #education .education-text {
+                text-align: center; /* Center text on smaller screens */
+                font-size: 20px; /* Slightly smaller font for mobile */
             }
             #education .education-image img {
                 width: 100%;
@@ -279,6 +283,7 @@
     <nav>
         <div class="container">
             <ul>
+                <!-- If you've removed the Home section, you might want to remove the Home link as well -->
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -312,9 +317,11 @@
                 <div class="about-col-2">
                     <p>I am currently a junior at Luddy School of Informatics, Computing and Engineering. At Luddy School of Informatics, Computing and Engineering, I have learned various experiences among talented students and thoughtful mentors:</p>
                     <ul>
-                        <li>I like to pursue a career in Data Engineering, ML Engineering, and Software Engineering (SWE).</li>             
+                        <li>I like to pursue a career in Data Engineering, ML Engineering, and Software Engineering (SWE).</li>
+                        <li>Passionate about Makerspace labs with modern technologies for prototyping, manufacturing, and laser-cutting.</li>
+                        <li>Participated as an undergraduate researcher with a PhD mentor to assess biological tool efficiencies of IU supercomputers.</li>
                         <li>Outside of school, served as an executive board member at Teter Residence Hall to enhance networking, maintain positivity, and coordinate all events for Teter residents.</li>
-                        <li>I love to hang out and have a chat with people because I view that everyone has different views about life and I learn from their perspectives. I am a sports person; I usually go to the gym and play all kinds of sports with my friends. If you want to challenge me in badminton, let's see.</li>
+                        <li>I love to hang out and have a chat with people because I view that everyone has different views about life and I learn from their perspectives. I am a sports person; I usually go to the gym and play all kinds of sports with my friends. If you want to challenge me in badminton, let's see. 🏸 🏋️</li>
                         <li>Interested in developing multimodal models to predict and software architecture, I was a SiparCS intern at NCAR where I worked on developing CI servers for HPC using Kubernetes and GitHub Webhooks for auto-scaling organizational runners.</li>
                         <li>Currently, I am a SWE intern at REN-ISAC where I am building infrastructure using Ansible and building databases with PostgreSQL for network address blocks for clients.</li>
                     </ul>
@@ -380,8 +387,9 @@
             <h2>Education</h2>
             <div class="education-content">
                 <div class="education-text">
-                    <p>Bachelor of Science in Computer Science specializing in AI</p>
-                    <span>August 2022 - May 2026</span>
+                    <p>Bachelor of Science in Computer Science<br>
+                       Indiana University<br>
+                       May 2026</p>
                 </div>
                 <div class="education-image">
                     <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming">
@@ -417,31 +425,45 @@
             <h2>My Portfolio</h2>
             <div class="work-list">
                 <div class="work">
-                    <img src="https://via.placeholder.com/300" alt="Autonomous Boat Challenge">
+                    <img src="" alt="Austoscaling organisational runners">
+                    <div class="layer">
+                        <h3>Autoscaling organisational runners</h3>
+                        <p>Building CI server at NSF NCAR.</p>
+                        <a href="https://www.cisl.ucar.edu/siparcs-2024-tri-nguyen" target="_blank">Learn More</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/autonomous_boat.JPG" alt="Autonomous Boat Challenge">
                     <div class="layer">
                         <h3>Autonomous Boat Challenge</h3>
                         <p>Building an autonomous boat.</p>
-                        <a href="https://news.iu.edu/live/news/37212-ai-powered-boat-competition-immerses-luddy">Learn More</a>
+                        <a href="https://news.iu.edu/live/news/37212-ai-powered-boat-competition-immerses-luddy" target="_blank">Learn More</a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="https://via.placeholder.com/300" alt="Helmet Detection Webapp">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/helmet_detection.png" alt="Helmet Detection Webapp">
                     <div class="layer">
                         <h3>Helmet Detection Webapp</h3>
                         <p>Helmet detection and license plate recording.</p>
-                        <a href="https://github.com/tringuyen180303/B351-Final-Project">Learn More</a>
+                        <a href="https://github.com/tringuyen180303/B351-Final-Project" target="_blank">Learn More</a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="https://via.placeholder.com/300" alt="Crossroad Challenge">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/CCAC_23.png" alt="Crossroad Challenge">
                     <div class="layer">
                         <h3>Crossroad Challenge</h3>
                         <p>Improve business revenue by analyzing data.</p>
-                        <a href="https://github.com/tringuyen180303/Crossroad-Challenge-Indiana-Colts">Learn More</a>
+                        <a href="https://github.com/tringuyen180303/CCAC-24" target="_blank">Learn More</a>
                     </div>
                 </div>
-                
-                
+                <div class="work">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/UROC_22.png" alt="UROC">
+                    <div class="layer">
+                        <h3>UROC</h3>
+                        <p>Evaluate the PepNet tool's trustworthiness in creating its own protein.</p>
+                        <a href="https://your-link.com/uroc" target="_blank">Learn More</a>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -456,8 +478,8 @@
                     <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ntri1805@gmail.com">ntri1805@gmail.com</a></p>
                     <p><i class="fas fa-phone"></i> Phone: <a href="tel:+18126715252">812-671-5252</a></p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/tringuyen180303" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/tringuyen180303" target="_blank"><i class="fab fa-github"></i></a>
                         <!-- Add more social icons as needed -->
                     </div>
                 </div>
