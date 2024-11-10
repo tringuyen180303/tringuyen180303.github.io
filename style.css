@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(11, 11, 5);
+    color: black;
+}
+
+#header{
+    width:100%;
+    height:100vh;
+    background-image:  url("https://trihnguy.pages.iu.edu/Portfolio_Tri/tripicfix.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 10%;
+    font-size: 25px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+
+}
+.border-top {
+    border-radius: 0px;
+    border-width: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    margin-left: 20px;
+
+}
+
+nav ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 800;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: lightsalmon;
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+
+    margin-top: 20%;
+    margin-left: 12%;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.border-medium{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255);
+    opacity: 0.6;
+    width: 450px;
+    align-items: center;
+    padding: 5px;
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.opensans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.header-text p{
+
+    color: navy;
+    font-size: 40px;
+    font-family: "Open Sans", sans-serif;
+}
+.header-text h1{
+    font-size: 50px;
+    margin-top: 30px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.header-text h1 span{
+    color:rgb(4, 4, 57);
+}
+
+
+/* -----------about-------> */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.padding-20px{
+    padding-top: 30px;
+}
+.about-col-1{
+    flex-basis: 35%;
+    padding-top: 40px;
+}
+
+.about-col-1 mig{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2{
+    flex-basis: 45%;
+}
+.center{
+    align-items: center;
+}
+.sub-title{
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    align-items: center;
+}
+
+.contact-info{
+    font-size: 20px;
+    color: antiquewhite;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.tab-links{
+    margin-right:20px;
+    font: size 22px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: lightsalmon;
+}
+
+.tab-links::after{
+    content: ' ';
+    width:0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left:0;
+    bottom: -8px;
+    transition:0.5s;}
+
+.tab-links.active-link::after{
+    width:50%;
+}
+
+.tab-contents ul li{
+
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color:red;
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-left p{
+    margin: 20px;
+}
+
+.contact-left p i{
+    color: white;
+    margin: 15px;
+}
+
+.contact-right{
+    flex-basis:60%;
+}
+
+.social-icons{
+    margin-top: 5px;
+
+}
+
+.social-icons a{
+    text-decoration: none;
+    margin-right: 5px;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+
+
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid slateblue;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: rgb(87, 87, 219);
+    transition: background 0.5s;
+}
+.btn.btn2:hover{
+    display: inline-block;
+    background: rgb(15, 215, 121);
+
+}
+
+
+.work{
+    border-radius: 10px;
+    position:relative;
+    overflow: hidden;
+}
+
+.work img{
+    width:100%;
+    border-radius:10px;
+    display: block;
+    transition: transform 0.5s;
+
+}
+
+.work:hover img{
+transform: scale(1.1);
+}
+#portfolio{
+    padding: 50px 0;
+
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 40px;
+    font-size: 25px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+
+.layer a{
+    margin-top: 20px;
+    color: yellow;
+    text-decoration: none;
+
+    font-size: 25px;
+    line-height: 60px;
+
+    text-align: center;
+
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 35px 0;
+    background: linear-gradient(rgba(0, 0, 0.6), lightsalmon);
+    font-weight: 550;
+    margin-top: 20px;
+    font-size: 20px;
+}
