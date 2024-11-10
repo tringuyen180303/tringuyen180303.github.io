@@ -29,9 +29,8 @@
         nav {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px 0;
-            position: fixed;
+            /* Removed position: fixed; to allow nav to scroll with the page */
             width: 100%;
-            top: 0;
             z-index: 1000;
         }
         nav ul {
@@ -287,6 +286,25 @@
             header {
                 padding-top: 80px; /* Adjust for fixed nav */
             }
+            /* Education Section Flex Layout */
+            #education .education-content {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+            #education .education-text, #education .education-image {
+                flex: 1 1 45%;
+            }
+            #education .education-image img {
+                width: 100%;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+            #education .education-image img:hover {
+                transform: scale(1.05);
+            }
         }
     </style>
 </head>
@@ -323,7 +341,7 @@
             <h2>About Me</h2>
             <div class="row">
                 <div class="about-col-1">
-                    <img src="https://via.placeholder.com/350" alt="About Image">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/tri_nguyen.png?raw=true" alt="About Image">
                 </div>
                 <div class="about-col-2">
                     <p>I am currently a junior at Luddy School of Informatics, Computing and Engineering. At Luddy School of Informatics, Computing and Engineering, I have learned various experiences among talented students and thoughtful mentors:</p>
@@ -386,8 +404,6 @@
                     <h3>Undergraduate Researcher at Luddy with PhD student</h3>
                     <span>August 2022 - December 2022</span>
                 </div>
-                <!-- New Internships -->
-                
             </div>
         </div>
     </section>
@@ -396,8 +412,15 @@
     <section id="education">
         <div class="container">
             <h2>Education</h2>
-            <p>Bachelor of Science in Computer Science specializing in AI</p>
-            <span>August 2022 - May 2026</span>
+            <div class="education-content">
+                <div class="education-text">
+                    <p>Bachelor of Science in Computer Science specializing in AI</p>
+                    <span>August 2022 - May 2026</span>
+                </div>
+                <div class="education-image">
+                    <img src="https://via.placeholder.com/300x200" alt="IU Blooming">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -418,8 +441,6 @@
                     <h3>Member of Computer Science Club</h3>
                     <span>August 2022 - Present</span>
                 </div>
-                <!-- New Involvement -->
-                
             </div>
         </div>
     </section>
@@ -430,10 +451,26 @@
             <h2>My Portfolio</h2>
             <div class="work-list">
                 <div class="work">
+                    <img src="https://via.placeholder.com/300" alt="Autonomous Boat Challenge">
+                    <div class="layer">
+                        <h3>Autonomous Boat Challenge</h3>
+                        <p>Building an autonomous boat.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://via.placeholder.com/300" alt="Helmet Detection Webapp">
+                    <div class="layer">
+                        <h3>Helmet Detection Webapp</h3>
+                        <p>Helmet detection and license plate recording.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="work">
                     <img src="https://via.placeholder.com/300" alt="Crossroad Challenge">
                     <div class="layer">
                         <h3>Crossroad Challenge</h3>
-                        <p>Improve the business revenue by analyzing the data.</p>
+                        <p>Improve business revenue by analyzing data.</p>
                         <a href="#">Learn More</a>
                     </div>
                 </div>
@@ -441,7 +478,7 @@
                     <img src="https://via.placeholder.com/300" alt="Optiver Algorithm Trading">
                     <div class="layer">
                         <h3>Optiver Algorithm Trading</h3>
-                        <p>Implement code to maximize the trade between Future and ETF.</p>
+                        <p>Implement code to maximize trades between Futures and ETFs.</p>
                         <a href="#">Learn More</a>
                     </div>
                 </div>
@@ -449,7 +486,7 @@
                     <img src="https://via.placeholder.com/300" alt="UROC">
                     <div class="layer">
                         <h3>UROC</h3>
-                        <p>Evaluate the PepNet tool trustworthiness of creating its own protein.</p>
+                        <p>Evaluate the PepNet tool's trustworthiness in creating its own protein.</p>
                         <a href="#">Learn More</a>
                     </div>
                 </div>
@@ -457,7 +494,7 @@
                     <img src="https://via.placeholder.com/300" alt="Algorithm Trading">
                     <div class="layer">
                         <h3>Algorithm Trading</h3>
-                        <p>Practicing using OOP to trade for best ask and best bid.</p>
+                        <p>Practicing OOP to trade for best ask and best bid.</p>
                         <a href="#">Learn More</a>
                     </div>
                 </div>
