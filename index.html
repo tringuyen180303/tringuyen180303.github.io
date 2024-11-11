@@ -325,42 +325,61 @@
                 margin: 10px 0;
             }
             /* Education Section Flex Layout */
-            #education .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-            #education .education-content {
-                flex-direction: column;
-                align-items: center;
-            }
-            #education .education-text, #education .education-image {
-                flex: 1 1 100%;
-            }
-            #education .education-text {
-                flex: 1 1 45%;
-                margin: 10px;
-                text-align: center; /* Center text on smaller screens */
-                font-size: 24px; /* Slightly smaller font for mobile */
-                display: flex; /* Enables flexbox for the text container */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Centers text within the container */
-    font-size: 24px; /* Increased font size for prominence */
-    line-height: 1.6; /* Improves readability */
-    color: #FFFFFF; /* Ensures text color contrasts with background */
+            /* Education Section Styling */
+#education .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the row contents */
+}
+
+#education .education-image, #education .education-text {
+    flex: 1 1 45%; /* Each takes up approximately 45% of the container */
+    margin: 10px;
+}
+
+#education .education-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#education .education-image img:hover {
+    transform: scale(1.05);
+}
+
+#education .education-text {
+    text-align: center; /* Center the text horizontally */
+    font-size: 24px; /* Adjust font size as desired */
+    line-height: 1.6; /* Improve readability */
+    color: #FFFFFF; /* Ensure text color contrasts with background */
     padding: 20px; /* Adds space around the text */
-            }
+    display: flex; /* Enables flexbox for vertical centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #education .row {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    #education .education-image, #education .education-text {
+        flex: 1 1 100%; /* Make both image and text take full width */
+        margin: 10px 0; /* Adjust margins for vertical stacking */
+    }
+
+    #education .education-text {
+        font-size: 20px; /* Slightly reduce font size for mobile readability */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
            
-            #education .education-image img {
-                width: 100%;
-                border-radius: 10px;
-                transition: transform 0.3s ease;
-            }
-            #education .education-image img:hover {
-                transform: scale(1.05);
-            }
+            
         }
     </style>
 </head>
@@ -479,21 +498,22 @@
         </div> -->
 
      <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="row">
-                <div class="education-image">
-                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming" >
-                </div>
-                <div class="education-text">
-                    <p>Bachelor of Science in Computer Science<br>
-                        Minor in Business<br>
-                       Indiana University<br>
-                       May 2026</p>
-                </div>
+    <div class="container">
+        <h2>Education</h2>
+        <div class="row">
+            <div class="education-image">
+                <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming">
+            </div>
+            <div class="education-text">
+                <p>Bachelor of Science in Computer Science<br>
+                    Minor in Business<br>
+                   Indiana University<br>
+                   May 2026</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Involvement Section -->
     <section id="involvement">
