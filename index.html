@@ -325,6 +325,11 @@
                 margin: 10px 0;
             }
             /* Education Section Flex Layout */
+            #education .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
             #education .education-content {
                 flex-direction: column;
                 align-items: center;
@@ -333,8 +338,10 @@
                 flex: 1 1 100%;
             }
             #education .education-text {
+                flex: 1 1 45%;
+                margin: 10px;
                 text-align: center; /* Center text on smaller screens */
-                font-size: 20px; /* Slightly smaller font for mobile */
+                font-size: 24px; /* Slightly smaller font for mobile */
             }
             #education .education-image img {
                 width: 100%;
