@@ -342,7 +342,17 @@
                 margin: 10px;
                 text-align: center; /* Center text on smaller screens */
                 font-size: 24px; /* Slightly smaller font for mobile */
+                display: flex; /* Enables flexbox for the text container */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text within the container */
+    font-size: 24px; /* Increased font size for prominence */
+    line-height: 1.6; /* Improves readability */
+    color: #FFFFFF; /* Ensures text color contrasts with background */
+    padding: 20px; /* Adds space around the text */
             }
+           
             #education .education-image img {
                 width: 100%;
                 border-radius: 10px;
@@ -472,7 +482,7 @@
         <div class="container">
             <h2>Education</h2>
             <div class="row">
-                <div class="about-col-1">
+                <div class="education-image">
                     <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming" >
                 </div>
                 <div class="education-text">
