@@ -30,6 +30,9 @@
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px 0;
             width: 100%;
+            position: fixed; /* Keeps the nav fixed at the top */
+            top: 0;
+            left: 0;
             z-index: 1000;
             overflow-x: auto; /* Allows horizontal scrolling if needed */
         }
@@ -81,9 +84,13 @@
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
+
+        /* Section Styling */
         section {
-            padding: 60px 0;
+            padding: 80px 0 60px; /* Added top padding to account for fixed nav */
         }
+
+        /* Heading Styling */
         h2 {
             text-align: center;
             margin-bottom: 40px;
@@ -91,6 +98,7 @@
             color: #FFFFFF;
             position: relative;
         }
+
         h2::after {
             content: '';
             width: 60px;
@@ -100,36 +108,45 @@
             display: block;
             border-radius: 2px;
         }
+
         /* About Section */
         #about .row {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center; /* Vertically centers the items */
+            gap: 20px; /* Adds space between columns */
         }
-        #about .about-col-1, #about .about-col-2 , #about .education-text  {
+
+        #about .about-col-1, 
+        #about .about-col-2 {
             flex: 1 1 45%;
+            max-width: 600px; /* Optional: Sets a maximum width for better readability */
             margin: 10px;
         }
+
         #about img {
             width: 100%;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
+
         #about img:hover {
             transform: scale(1.05);
         }
-        #about .education-text {
-    display: flex; /* Enables flexbox for the text container */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Centers text within the container */
-    font-size: 24px; /* Increased font size for prominence */
-    line-height: 1.6; /* Improves readability */
-    color: #FFFFFF; /* Ensures text color contrasts with background */
-    padding: 20px; /* Adds space around the text */
-            
-}
+
+        #about .about-col-2 ul {
+            list-style: disc inside;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        #about .about-col-2 ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+
         /* Skills Section */
         #skills .skills-grid {
             display: flex;
@@ -137,6 +154,7 @@
             justify-content: center;
             gap: 15px;
         }
+
         #skills .skills-grid span {
             background-color: #333333;
             color: #FFFFFF;
@@ -145,14 +163,29 @@
             font-size: 16px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         #skills .skills-grid span:hover {
             background-color: #FF004F;
             transform: scale(1.1);
         }
+
+        #skills p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #skills p img {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+        }
+
         /* Experience, Education, Involvement Sections */
         .timeline {
             margin-top: 20px;
         }
+
         .timeline-item {
             margin-bottom: 20px;
             background-color: rgba(255, 255, 255, 0.1);
@@ -160,23 +193,73 @@
             border-radius: 8px;
             transition: background-color 0.3s ease;
         }
+
         .timeline-item:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+
         .timeline-item h3 {
             margin-bottom: 5px;
             font-size: 20px;
         }
+
         .timeline-item span {
             font-size: 14px;
             color: #CCCCCC;
         }
+
+        /* Education Section */
+        #education .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center; /* Vertically centers the items within the row */
+            justify-content: center; /* Horizontally centers the row contents */
+            gap: 20px; /* Adds space between the image and text */
+        }
+
+        #education .education-image, 
+        #education .education-text {
+            flex: 1 1 45%; /* Each takes up approximately 45% of the container */
+            max-width: 500px; /* Sets a maximum width for better readability */
+            margin: 10px;
+        }
+
+        #education .education-image img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #education .education-image img:hover {
+            transform: scale(1.05);
+        }
+
+        #education .education-text {
+            display: flex; /* Enables flexbox for vertical centering */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: center; /* Vertically centers the content */
+            align-items: center; /* Horizontally centers the content */
+            text-align: center; /* Centers the text within the container */
+            font-size: 24px; /* Adjust font size as desired */
+            line-height: 1.6; /* Improves readability */
+            color: #FFFFFF; /* Ensures text color contrasts with background */
+            padding: 20px; /* Adds space around the text */
+            background-color: rgba(255, 0, 79, 0.1); /* Adds a subtle background for better contrast */
+            border-radius: 10px; /* Adds rounded corners to the text container */
+        }
+
+        /* Involvement Section */
+        #involvement .timeline-item h3 {
+            font-size: 20px;
+        }
+
         /* Portfolio Section */
         #portfolio .work-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .work {
             position: relative;
             overflow: hidden;
@@ -184,10 +267,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .work:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
+
         .work img {
             width: 100%;
             display: block;
@@ -195,90 +280,96 @@
             height: 200px; /* Ensures consistent image height */
             object-fit: cover; /* Maintains aspect ratio */
         }
+
         .layer {
             position: absolute;
-            bottom: 0;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
             background: rgba(0, 0, 0, 0.7);
             color: #FFFFFF;
-            width: 100%;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            display: flex; /* Enables flexbox */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: center; /* Centers vertically */
+            align-items: center; /* Centers horizontally */
+            opacity: 0; /* Initially hidden */
+            transition: transform 0.3s ease, opacity 0.3s ease;
             padding: 20px;
+            box-sizing: border-box; /* Ensures padding doesn't affect overall size */
+        }
+
+        .work:hover .layer {
+            opacity: 1; /* Makes overlay visible */
+            transform: translateY(0); /* Ensures overlay is in place */
+        }
+
+        .layer h3 {
+            margin-bottom: 8px;
+            font-size: 18px; /* Increased font size for better visibility */
             text-align: center; /* Ensures text is centered */
         }
-        .work:hover .layer {
-    transform: translateY(0); /* Slide up the overlay on hover */
-}
 
-.layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #FFFFFF;
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers vertically */
-    align-items: center; /* Centers horizontally */
-    opacity: 0; /* Initially hidden */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    padding: 20px;
-    box-sizing: border-box; /* Ensures padding doesn't affect overall size */
-}
+        .layer p {
+            font-size: 14px; /* Increased font size for better readability */
+            text-align: center; /* Ensures text is centered */
+        }
 
-.work:hover .layer {
-    opacity: 1; /* Makes overlay visible */
-    transform: translateY(0); /* Ensures overlay is in place */
-}
+        .layer a {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 18px;
+            background-color: #FF004F;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-.layer h3 {
-    margin-bottom: 8px;
-    font-size: 18px; /* Increased font size for better visibility */
-    text-align: center; /* Ensures text is centered */
-}
-
-.layer p {
-    font-size: 14px; /* Increased font size for better readability */
-    text-align: center; /* Ensures text is centered */
-}
-
-.layer a {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 8px 18px;
-    background-color: #FF004F;
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.layer a:hover {
-    background-color: #FFFFFF;
-    color: #FF004F;
-}
+        .layer a:hover {
+            background-color: #FFFFFF;
+            color: #FF004F;
+        }
 
         /* Contact Section */
-        #contact .contact-info p {
+        #contact .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #contact .contact-left, 
+        #contact .contact-right {
+            flex: 1 1 45%;
+            max-width: 500px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #contact .contact-left p {
             font-size: 18px;
             margin: 10px 0;
             transition: color 0.3s ease;
         }
-        #contact .contact-info p i {
+
+        #contact .contact-left p i {
             color: #FF004F;
             margin-right: 10px;
         }
-        #contact .contact-info p a {
+
+        #contact .contact-left p a {
             color: #FFFFFF;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        #contact .contact-info p a:hover {
+
+        #contact .contact-left p a:hover {
             color: #FF004F;
         }
+
         #contact .social-icons a {
             color: #FFFFFF;
             margin: 0 10px;
@@ -286,10 +377,12 @@
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
         }
+
         #contact .social-icons a:hover {
             color: #FF004F;
             transform: translateY(-5px);
         }
+
         #contact .btn {
             display: inline-block;
             padding: 10px 20px;
@@ -301,10 +394,12 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         #contact .btn:hover {
             background-color: #0FD779;
             transform: translateY(-3px);
         }
+
         /* Footer */
         .copyright {
             background-color: rgba(0, 0, 0, 0.6);
@@ -313,73 +408,65 @@
             color: #FFFFFF;
             font-size: 16px;
         }
-        /* Responsive */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            #about .row {
-                flex-direction: column;
-            }
+            /* Navigation */
             nav ul {
                 flex-direction: column;
             }
+
             nav ul li {
                 margin: 10px 0;
             }
-            /* Education Section Flex Layout */
-            /* Education Section Styling */
-#education .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center; /* Vertically center the items */
-    justify-content: center; /* Horizontally center the row contents */
-}
 
-#education .education-image, #education .education-text {
-    flex: 1 1 45%; /* Each takes up approximately 45% of the container */
-    margin: 10px;
-}
+            /* About Section */
+            #about .row {
+                flex-direction: column;
+                align-items: center;
+            }
 
-#education .education-image img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
+            /* Education Section */
+            #education .row {
+                flex-direction: column; /* Stacks image and text vertically */
+                align-items: center; /* Centers items horizontally */
+                gap: 15px;
+            }
 
-#education .education-image img:hover {
-    transform: scale(1.05);
-}
+            #education .education-image, 
+            #education .education-text {
+                flex: 1 1 100%; /* Makes both image and text take full width */
+                max-width: none; /* Removes the maximum width constraint */
+                margin: 10px 0; /* Adjusts margins for vertical stacking */
+            }
 
-#education .education-text {
-    text-align: center; /* Center the text horizontally */
-    font-size: 24px; /* Adjust font size as desired */
-    line-height: 1.6; /* Improve readability */
-    color: #FFFFFF; /* Ensure text color contrasts with background */
-    padding: 20px; /* Adds space around the text */
-    display: flex; /* Enables flexbox for vertical centering */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-}
+            #education .education-text {
+                font-size: 20px; /* Slightly reduces font size for mobile readability */
+                padding: 15px; /* Adjusts padding for smaller screens */
+                background-color: rgba(255, 0, 79, 0.05); /* Optional: Lightens background for mobile */
+            }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    #education .row {
-        flex-direction: column; /* Stack image and text vertically on smaller screens */
-        align-items: center; /* Center items horizontally */
-    }
+            /* Skills Section */
+            #skills .skills-grid {
+                justify-content: center;
+            }
 
-    #education .education-image, #education .education-text {
-        flex: 1 1 100%; /* Make both image and text take full width */
-        margin: 10px 0; /* Adjust margins for vertical stacking */
-    }
+            #skills p img {
+                width: 100%;
+            }
 
-    #education .education-text {
-        font-size: 20px; /* Slightly reduce font size for mobile readability */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-}
+            /* Contact Section */
+            #contact .row {
+                flex-direction: column;
+                align-items: center;
+            }
 
-           
-            
+            #contact .contact-left, 
+            #contact .contact-right {
+                flex: 1 1 100%;
+                max-width: none;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -389,7 +476,6 @@
     <nav>
         <div class="container">
             <ul>
-                <!-- If you've removed the Home section, you might want to remove the Home link as well -->
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -400,7 +486,6 @@
             </ul>
         </div>
     </nav>
-
 
     <!-- About Me Section -->
     <section id="about">
@@ -413,12 +498,11 @@
                 <div class="about-col-2">
                     <p>I am currently a junior at Luddy School of Informatics, Computing and Engineering. At Luddy School of Informatics, Computing and Engineering, I have learned various experiences among talented students and thoughtful mentors:</p>
                     <ul>
-                        <li>I like to pursue a career in Data Engineering, ML Engineering, and Software Engineering (SWE),especially in developing multimodal models for prediction and learning software/data architecture. 💻</li>
+                        <li>I like to pursue a career in Data Engineering, ML Engineering, and Software Engineering (SWE), especially in developing multimodal models for prediction and learning software/data architecture. 💻</li>
                         <li>I was a SiparCS intern at NCAR where I worked on developing CI servers for HPC using Kubernetes and GitHub Webhooks for auto-scaling organizational runners.</li>
                         <li>Currently, I am a SWE intern at REN-ISAC where I am building infrastructure using Ansible and building databases with PostgreSQL for network address blocks for clients.</li>
                         <li>Outside of school, served as a Co-President for Machine Learning For All club to enhance networking, maintain positivity, and coordinate all events for Luddy students.</li>
                         <li>I love to hang out and have a chat with people because I view that everyone has different views about life and I learn from their perspectives. I am a sports person; I usually go to the gym and play all kinds of sports with my friends. If you want to challenge me in badminton, let's see. 🏸 🏋️</li>
-                        
                     </ul>
                 </div>
             </div>
@@ -441,10 +525,10 @@
                 <span>SQL</span>
             </div>
             <p align="center">
-              <a>
-                <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,vim,gcp,anaconda,bash,c,cpp,elasticsearch,fastapi,firebase,flask,java,kafka,linux,mysql,nginx,py,pytorch,tensorflow&perline=10" />
-  </a>
-</p>
+                <a>
+                    <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,vim,gcp,anaconda,bash,c,cpp,elasticsearch,fastapi,firebase,flask,java,kafka,linux,mysql,nginx,py,pytorch,tensorflow&perline=10" alt="Skills Icons"/>
+                </a>
+            </p>
         </div>
     </section>
 
@@ -482,38 +566,22 @@
     </section>
 
     <!-- Education Section -->
-<!--     <section id="education">
+    <section id="education">
         <div class="container">
             <h2>Education</h2>
             <div class="row">
-                <div class="education-text">
-                    <p>Bachelor of Science in Computer Science<br>
-                       Indiana University<br>
-                       May 2026</p>
-                </div>
                 <div class="education-image">
                     <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming">
                 </div>
-            </div>
-        </div> -->
-
-     <section id="education">
-    <div class="container">
-        <h2>Education</h2>
-        <div class="row">
-            <div class="education-image">
-                <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/sample_gates.jpg?raw=true" alt="IU Blooming">
-            </div>
-            <div class="education-text">
-                <p>Bachelor of Science in Computer Science<br>
-                    Minor in Business<br>
-                   Indiana University<br>
-                   May 2026</p>
+                <div class="education-text">
+                    <p>Bachelor of Science in Computer Science<br>
+                        Minor in Business<br>
+                        Indiana University<br>
+                        May 2026</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Involvement Section -->
     <section id="involvement">
@@ -532,7 +600,6 @@
                     <h3>Secretary of Teter Residence Hall</h3>
                     <span>January 2023 - May 2023</span>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -543,9 +610,9 @@
             <h2>Showcases</h2>
             <div class="work-list">
                 <div class="work">
-                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/tri_ncar_presentaton.png?raw=true" alt="Austoscaling organisational runners">
+                    <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/tri_ncar_presentaton.png?raw=true" alt="Autoscaling organizational runners">
                     <div class="layer">
-                        <h3>Autoscaling organisational runners</h3>
+                        <h3>Autoscaling Organizational Runners</h3>
                         <p>Building CI server at NSF NCAR.</p>
                         <a href="https://www.cisl.ucar.edu/siparcs-2024-tri-nguyen" target="_blank">Learn More</a>
                     </div>
@@ -570,7 +637,7 @@
                     <img src="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/ML4A_pic.JPG?raw=true" alt="ML4A Club">
                     <div class="layer">
                         <h3>Machine Learning For All</h3>
-                        <p>Building AI/ML community at IU</p>
+                        <p>Building AI/ML community at IU.</p>
                         <a href="https://github.com/Ml4All-IU" target="_blank">Learn More</a>
                     </div>
                 </div>
@@ -590,7 +657,6 @@
                         <a href="https://github.com/tringuyen180303/tringuyen180303.github.io/blob/main/Tri_Nguyen_UROC%5B363%5D.pptx" target="_blank">Learn More</a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -603,8 +669,8 @@
                 <div class="contact-left">
                     <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ntri1805@gmail.com">ntri1805@gmail.com</a></p>
                     <div class="social-icons">
-                        <a href="https://linkedin.com/in/tringuyen180303" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"/></a>
-                        <a href="https://github.com/tringuyen180303" target="_blank"><img src="https://skillicons.dev/icons?i=github"/></a>
+                        <a href="https://linkedin.com/in/tringuyen180303" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn"/></a>
+                        <a href="https://github.com/tringuyen180303" target="_blank"><img src="https://skillicons.dev/icons?i=github" alt="GitHub"/></a>
                         <!-- Add more social icons as needed -->
                     </div>
                 </div>
